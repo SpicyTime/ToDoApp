@@ -1,18 +1,25 @@
-const taskInput = document.getElementById("task-input");
+const TASK_INPUT = document.getElementById("task-input");
+const CHECKLIST = document.getElementById("checklist");
 
-const checklist = document.getElementById("checklist");
-taskInput.addEventListener('keydown', function(event) {
+const MAX_TASK_COUNT = 15;
+var currentTaskAmount = 0;
+
+TASK_INPUT.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {  // Check if Enter was pressed
         addTask();             // Call your function
     }
 });
 
+
 function addTask(){
-    if (taskInput.value != ""){
-        const checkbox = document.createElement('input');
-        const label = document.createElement('label');
+    if (currentTaskAmount >= MAX_TASK_COUNT){
+        return;
+    }
+
+    if (TASK_INPUT.value != ""){
+        let checkbox = document.createElement('input');
+        let label = document.createElement('label');
         checkbox.type = 'checkbox';
-        //checkbox.id = 'checkbox';
 
         checkbox.onclick = () => {
             if (checkbox.checked){
@@ -21,23 +28,27 @@ function addTask(){
                 label.className = "checkbox-unchecked";
             }
         };
+        label.setAttribute("name", "checkbox-item-label");
         label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(" " + taskInput.value));
-        checklist.appendChild(label);
+        label.appendChild(document.createTextNode(" " + TASK_INPUT.value));
+        CHECKLIST.appendChild(label);
         
-        taskInput.value = "";
+        TASK_INPUT.value = "";
+        currentTaskAmount += 1;
     }
 }
 
 function clearAllTasks(){
-    checklist.innerHTML = '';
+    CHECKLIST.innerHTML = '';
+    currentTaskAmount = 0;
 }
 
 function clearCompletedTasks(){
-    const labels = checklist.children;
+    const labels = CHECKLIST.children;
     for (const label of labels){
         if (label.className === "checkbox-checked"){
-            checklist.removeChild(label);
+            CHECKLIST.removeChild(label);
+            currentTaskAmount -= 1;
         }
     }
 }

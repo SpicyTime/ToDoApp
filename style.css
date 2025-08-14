@@ -13,6 +13,7 @@
     align-items: center;
     gap: 0.5rem; /* space between input and buttons */
 }
+
 #task-list-section{
     width: 100%;
     display: flex;
@@ -22,7 +23,10 @@
 #task-input {
     width: 80%;
     box-sizing: border-box;
+    box-shadow: 0px 5px 3px 0 rgb(177, 180, 190);
+    padding: 10px;
 }
+
 #to-do-list-title{
     text-align: center;
 }
@@ -30,34 +34,62 @@
 #to-do-panel {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: bisque;
-    width: 350px;
-    height:fit-content;
+    margin: 0 auto; /* centers the panel itself horizontally */
+    background-color: rgb(202, 202, 202);
+    width: 75vw;
+    height: 70vh;
     padding: 1rem;
     padding-bottom: 3rem;
-    border-radius: 6px;
+    border: solid;
+    border-width: 1rem;
+    border-color: rgb(22, 22, 22);
+    border-radius: 20px;
+    gap: 10px;
 }
-
+#button-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 /* Strike-through completed tasks */
 .checkbox-checked {
     color: hsl(0, 0%, 50%);
     text-decoration: line-through;
     text-decoration-color: black;
 }
-
-/* Center entire main content in page */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;      
-    width: 100vw;
-    height: 100vh;            /* full screen height */
-    margin: 0;
+.task-button{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 5px 3px 0 rgb(177, 180, 190);
+    width: 175px;
+    padding: 20px;
+    background-color: rgb(237, 237, 237);
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease-in-out;
 }
-
+[name="checkbox-item-label"] {
+    /* base styles */
+    font-size: 20px;
+}
 /* Center the heading */
 h1 {
     text-align: center;
+    color: rgb(233, 233, 233);
+}
+
+body{
+    background-color: rgb(43, 41, 41);
+}
+
+
+.task-button:hover{
+    background-color: rgb(249, 249, 249);
+    cursor: pointer;
+}
+
+.task-button:active{
+    background-color: rgb(209, 208, 208);
 }
