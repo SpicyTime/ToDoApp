@@ -1,4 +1,4 @@
-const taskInput = document.getElementById("taskInput");
+const taskInput = document.getElementById("task-input");
 
 const checklist = document.getElementById("checklist");
 taskInput.addEventListener('keydown', function(event) {
@@ -23,8 +23,6 @@ function addTask(){
         };
         label.appendChild(checkbox);
         label.appendChild(document.createTextNode(" " + taskInput.value));
-        
-
         checklist.appendChild(label);
         
         taskInput.value = "";

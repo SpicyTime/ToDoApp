@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-        
-        <title>To do app</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>To do app</title>
+</head>
+<body>
     <main>
-        <body>
-            <h1>To do app</h1>
-            <div id="to-do-panel">
-                
-                <input id="taskInput" type="text">
-                <button onclick="addTask()"  id="taskadder" >Add task</button>
-                <br>
-                <button onclick="clearAllTasks()">Clear all tasks</button>
-                <button onclick="clearCompletedTasks()">Clear completed tasks</button>
-                <h2>To do:</h2>
-                <div id="checklist"></div>
-            </div>
-        </body>
-        <script src="script.js"></script>
-    </main>
-    <footer>
+        <h1>To do app</h1>
+        <div id="to-do-panel">
+            <section id="task-input-section">
+                <input id="task-input" type="text">
 
-    </footer>
+                <div class="button-group">
+                    <button onclick="addTask()" id="task-adder">Add task</button>
+                    <button onclick="clearAllTasks()">Clear all tasks</button>
+                    <button onclick="clearCompletedTasks()">Clear completed tasks</button>
+                </div>
+            </section>
+
+            <section id="task-list-section">
+                <h2 id="to-do-list-title">To do:</h2>
+                <div id="checklist"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
 </html>

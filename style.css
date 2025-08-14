@@ -1,10 +1,63 @@
-#checklist{
-    display:flex;
+/* Checklist list styling */
+#checklist {
+    display: flex;
     flex-direction: column;
-    padding-left: 30px;
+    width: 50%;
 }
-.checkbox-checked{
+
+/* Task input section fills panel width & centers content */
+#task-input-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* space between input and buttons */
+}
+#task-list-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* Input takes up 80% of panel width */
+#task-input {
+    width: 80%;
+    box-sizing: border-box;
+}
+#to-do-list-title{
+    text-align: center;
+}
+/* Panel styling */
+#to-do-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    width: 350px;
+    height:fit-content;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    border-radius: 6px;
+}
+
+/* Strike-through completed tasks */
+.checkbox-checked {
     color: hsl(0, 0%, 50%);
     text-decoration: line-through;
     text-decoration-color: black;
+}
+
+/* Center entire main content in page */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+    width: 100vw;
+    height: 100vh;            /* full screen height */
+    margin: 0;
+}
+
+/* Center the heading */
+h1 {
+    text-align: center;
 }
